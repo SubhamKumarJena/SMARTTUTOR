@@ -1607,12 +1607,15 @@ input, select, textarea {
   background: rgba(15,31,75,0.7);
   backdrop-filter: blur(4px);
   z-index: 2000;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: var(--space-4);
   /* Animation */
   animation: modal-fade-in 0.2s ease;
+}
+.modal-overlay:not([hidden]) {
+  display: flex;
 }
 @keyframes modal-fade-in {
   from { opacity: 0; }
@@ -1621,10 +1624,12 @@ input, select, textarea {
 
 .modal-container {
   background: var(--bg-card);
+  color: var(--text-primary);
   border-radius: var(--border-radius-xl);
   box-shadow: var(--shadow-xl);
   max-width: 640px;
   width: 100%;
+  min-height: 220px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
@@ -1652,7 +1657,20 @@ input, select, textarea {
 }
 .modal-close:hover { background: #fee2e2; color: #dc2626; }
 
-.modal-body { padding: var(--space-8); }
+.modal-body {
+  padding: var(--space-8);
+  color: var(--text-primary);
+}
+.modal-empty-state {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.modal-empty-state p {
+  color: var(--text-secondary);
+  max-width: 34ch;
+}
 .modal-header {
   display: flex;
   align-items: flex-start;

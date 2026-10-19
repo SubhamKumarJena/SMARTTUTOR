@@ -727,8 +727,16 @@ function openModal(courseId) {
   // Store focus so we can restore it when modal closes
   modalPreviousFocus = document.activeElement;
 
-  // Populate modal content
-  modalBody.innerHTML = buildModalContent(course);
+  // Populate modal content (with fallback to avoid empty dialog states)
+  let modalContent = "";
+  try {
+    modalContent = buildModalContent(course);
+  } catch (_error) {
+    modalContent = "";
+  }
+  modalBody.innerHTML = modalContent && modalContent.trim()
+    ? modalContent
+    : buildModalFallbackContent();
 
   // Wire up the "Enquire" button inside modal
   const enquireBtn = modalBody.querySelector(".modal-enquire-btn");
@@ -790,10 +798,16 @@ function trapFocus(e, container) {
 
 /** Build the modal inner HTML for a given course */
 function buildModalContent(course) {
-  const diffClass = `difficulty-${course.difficulty}`;
-  const topicsHtml = course.topics
+  const diffClass = `difficulty-${course.difficulty || "beginner"}`;
+  const topicsHtml = Array.isArray(course.topics) && course.topics.length
+    ? course.topics
     .map((t) => `<li>${escapeHtml(t)}</li>`)
-    .join("");
+    .join("")
+    : "<li>Topic details will be shared during counselling.</li>";
+  const description = (course.fullDescription || "").trim()
+    || "Detailed course information is currently unavailable.";
+  const category = course.category ? capitalise(course.category) : "General";
+  const level = course.difficulty ? capitalise(course.difficulty) : "All Levels";
 
   return `
     <div class="modal-header">
@@ -817,17 +831,17 @@ function buildModalContent(course) {
       </div>
       <div class="modal-meta-item">
         <p class="modal-meta-label">Category</p>
-        <p class="modal-meta-value">${capitalise(course.category)}</p>
+        <p class="modal-meta-value">${category}</p>
       </div>
       <div class="modal-meta-item">
         <p class="modal-meta-label">Level</p>
-        <p class="modal-meta-value">${capitalise(course.difficulty)}</p>
+        <p class="modal-meta-value">${level}</p>
       </div>
     </div>
 
     <div class="modal-section">
       <p class="modal-section-title">About This Course</p>
-      <p>${escapeHtml(course.fullDescription)}</p>
+      <p>${escapeHtml(description)}</p>
     </div>
 
     <div class="modal-section">
@@ -838,6 +852,14 @@ function buildModalContent(course) {
     <div class="modal-actions">
       <button class="btn btn-primary modal-enquire-btn">Enquire About This Course</button>
       <button class="btn btn-outline modal-close-action" onclick="closeModal()">Close</button>
+    </div>
+  `;
+}
+
+function buildModalFallbackContent() {
+  return `
+    <div class="modal-empty-state" role="status" aria-live="polite">
+      <p>Course details are unavailable right now. Please try again in a moment.</p>
     </div>
   `;
 }
