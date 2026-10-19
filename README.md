@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SmartTutor — Premium Tutoring & Coaching Website
 
 ![SmartTutor Banner](assets/images/hero-illustration.jpg)
@@ -302,3 +303,6 @@ This project is created for personal portfolio and educational purposes. Before 
 ---
 
 *Built with ❤️ as a first freelancing portfolio project by a BTech CSE/AI-ML student.*
+=======
+# SMARTTUTOR
+>>>>>>> 522ccef9b18e7927b13aa720bf44e6913bfe9c2c
