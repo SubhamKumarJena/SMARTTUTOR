@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- =====================================================================
+       SmartTutor — Premium Tutoring & Coaching Website
+       Author  : [Your Name] (demo portfolio project)
+       Version : 1.0.0
+       Tech    : HTML5 · CSS3 · Vanilla JS (static, no framework)
+       ===================================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Meta -->
+  <title>SmartTutor — Learn Smarter. Achieve More.</title>
+  <meta name="description" content="SmartTutor offers personalised tutoring in Maths, Physics, Python, Web Development and more. Expert guidance, flexible schedules, and practical learning for every student." />
+  <meta name="keywords" content="tutoring, online coaching, maths tutor, physics tutor, python programming, web development, data science, personalised learning" />
+  <meta name="author" content="SmartTutor (Demo Portfolio Project)" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SmartTutor — Learn Smarter. Achieve More." />
+  <meta property="og:description" content="Personalised learning, expert guidance, and practical courses designed to help you reach your academic goals." />
+  <meta property="og:image" content="assets/images/hero-illustration.jpg" />
+  <meta property="og:url" content="https://smarttutor.example.com" />
+
+  <!-- Theme Colour (browser UI tint on mobile) -->
+  <meta name="theme-color" content="#1a2f6e" />
+
+  <!-- Favicon — inline SVG as data URI, no external file needed -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a2f6e'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='38' font-family='Arial' font-weight='bold' fill='white'%3EST%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts — Inter (weights 400, 500, 600, 700, 800) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SKIP NAVIGATION — keyboard / screen-reader accessibility
+       ===================================================================== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =====================================================================
+       NAVIGATION BAR
+       ===================================================================== -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container nav-container">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="SmartTutor — go to homepage">
+        <svg class="logo-icon" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="12" fill="#2563eb"/>
+          <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="32" font-family="Inter,Arial" font-weight="800" fill="white">ST</text>
+        </svg>
+        <span class="logo-text">Smart<span class="logo-accent">Tutor</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Primary navigation">
+        <ul role="list">
+          <li><a href="#home"         class="nav-link" data-section="home">Home</a></li>
+          <li><a href="#courses"      class="nav-link" data-section="courses">Courses</a></li>
+          <li><a href="#about"        class="nav-link" data-section="about">About</a></li>
+          <li><a href="#testimonials" class="nav-link" data-section="testimonials">Testimonials</a></li>
+          <li><a href="#faq"          class="nav-link" data-section="faq">FAQ</a></li>
+          <li><a href="#contact"      class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-btn" aria-label="Switch to dark mode" title="Toggle light/dark mode">
+          <!-- Sun icon (visible in light mode) -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (visible in dark mode) -->
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- CTA Button (desktop) -->
+        <a href="#contact" class="btn btn-primary nav-cta">Book a Free Demo</a>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <nav aria-label="Mobile navigation links">
+        <ul role="list">
+          <li><a href="#home"         class="mob-link" data-section="home">Home</a></li>
+          <li><a href="#courses"      class="mob-link" data-section="courses">Courses</a></li>
+          <li><a href="#about"        class="mob-link" data-section="about">About</a></li>
+          <li><a href="#testimonials" class="mob-link" data-section="testimonials">Testimonials</a></li>
+          <li><a href="#faq"          class="mob-link" data-section="faq">FAQ</a></li>
+          <li><a href="#contact"      class="mob-link" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="btn btn-primary mob-cta">Book a Free Demo</a>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN CONTENT
+       ===================================================================== -->
+  <main id="main-content">
+
+    <!-- ==================================================================
+         SECTION 1 — HERO
+         ================================================================== -->
+    <section id="home" class="hero-section" aria-labelledby="hero-headline">
+      <div class="container hero-container">
+
+        <!-- Text content -->
+        <div class="hero-text" data-animate="fade-up">
+          <span class="hero-badge">🎓 Trusted by 500+ learners (demo figure)</span>
+          <h1 id="hero-headline" class="hero-headline">
+            Learn Smarter.<br/>
+            <span class="gradient-text">Achieve More.</span>
+          </h1>
+          <p class="hero-subheading">
+            Personalised learning, expert guidance, and practical courses designed
+            to help you reach your academic and professional goals.
+          </p>
+          <div class="hero-buttons">
+            <a href="#courses" class="btn btn-primary btn-lg">Explore Courses</a>
+            <a href="#contact" class="btn btn-outline btn-lg">Book a Free Demo</a>
+          </div>
+
+          <!-- Stats — clearly labelled as demo/sample figures -->
+          <div class="hero-stats" aria-label="Sample statistics (demo figures — not verified)">
+            <p class="stats-disclaimer" aria-live="polite">
+              ⚠️ <strong>Demo figures</strong> — replace with real, verified data before going live.
+            </p>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Students Taught</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">Courses Available</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+                <span class="stat-label">Learner Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero illustration -->
+        <div class="hero-image" data-animate="fade-left" aria-hidden="true">
+          <img src="assets/images/hero-illustration.jpg"
+               alt="Student studying with laptop surrounded by academic symbols — illustrative image"
+               width="640" height="360"
+               loading="eager"
+               class="hero-img" />
+          <!-- Decorative floating badges -->
+          <div class="float-badge float-badge--top" aria-hidden="true">
+            <span>📊</span> Live Progress Tracking
+          </div>
+          <div class="float-badge float-badge--bottom" aria-hidden="true">
+            <span>✅</span> 1-on-1 Sessions Available
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative wave divider -->
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg-primary)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 2 — COURSES
+         ================================================================== -->
+    <section id="courses" class="courses-section section" aria-labelledby="courses-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">📚 What We Teach</span>
+          <h2 id="courses-heading" class="section-title">Our Courses</h2>
+          <p class="section-subtitle">Choose from carefully designed courses across STEM and technology subjects.</p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="courses-toolbar" data-animate="fade-up" role="search" aria-label="Course search and filter">
+          <div class="search-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search"
+                   id="course-search"
+                   class="search-input"
+                   placeholder="Search courses…"
+                   aria-label="Search courses by name or keyword"
+                   autocomplete="off" />
+            <button class="search-clear" id="search-clear" aria-label="Clear search" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+
+          <div class="filter-tabs" role="tablist" aria-label="Course category filters">
+            <button class="filter-btn active" data-filter="all"   role="tab" aria-selected="true"  aria-controls="courses-grid">All</button>
+            <button class="filter-btn"         data-filter="stem" role="tab" aria-selected="false" aria-controls="courses-grid">STEM</button>
+            <button class="filter-btn"         data-filter="tech" role="tab" aria-selected="false" aria-controls="courses-grid">Technology</button>
+            <button class="filter-btn"         data-filter="data" role="tab" aria-selected="false" aria-controls="courses-grid">Data &amp; AI</button>
+          </div>
+        </div>
+
+        <!-- Course Cards Grid -->
+        <div id="courses-grid" class="courses-grid" aria-live="polite" aria-label="Course listing">
+          <!-- Cards are rendered by JavaScript from courseData array -->
+        </div>
+
+        <!-- Empty state (shown when no results) -->
+        <div id="no-courses" class="no-results" hidden aria-live="assertive">
+          <span aria-hidden="true">🔍</span>
+          <p>No courses match your search. Try a different keyword or reset the filter.</p>
+          <button id="reset-search" class="btn btn-outline">Reset Search</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 3 — WHY CHOOSE US
+         ================================================================== -->
+    <section id="why-us" class="why-section section" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">⭐ Our Difference</span>
+          <h2 id="why-heading" class="section-title">Why Choose SmartTutor?</h2>
+          <p class="section-subtitle">We go beyond textbooks to make learning stick.</p>
+        </div>
+
+        <div class="features-grid" data-animate="fade-up">
+
+          <article class="feature-card" aria-label="Personalised learning plans">
+            <div class="feature-icon" aria-hidden="true">🗺️</div>
+            <h3>Personalised Learning Plans</h3>
+            <p>Every student is different. We design your learning path based on your current level, goals, and pace.</p>
+          </article>
+
+          <article class="feature-card" aria-label="Clear explanations">
+            <div class="feature-icon" aria-hidden="true">💡</div>
+            <h3>Crystal-Clear Explanations</h3>
+            <p>Complex topics broken into simple, memorable steps. No jargon — just understanding.</p>
+          </article>
+
+          <article class="feature-card" aria-label="Flexible schedules">
+            <div class="feature-icon" aria-hidden="true">📅</div>
+            <h3>Flexible Schedules</h3>
+            <p>Book sessions around your college, school, or work timetable. Morning, evening, weekends — your choice.</p>
+          </article>
+
+          <article class="feature-card" aria-label="Practical exercises">
+            <div class="feature-icon" aria-hidden="true">🧪</div>
+            <h3>Practical Exercises</h3>
+            <p>Hands-on coding projects, problem sets, and real-world examples to reinforce every concept.</p>
+          </article>
+
+          <article class="feature-card" aria-label="Progress tracking">
+            <div class="feature-icon" aria-hidden="true">📈</div>
+            <h3>Progress Tracking</h3>
+            <p>Regular assessments and feedback sessions so you always know how far you have come and what to focus on next.</p>
+          </article>
+
+          <article class="feature-card" aria-label="Supportive environment">
+            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <h3>Supportive Environment</h3>
+            <p>Ask any question, make mistakes, and learn without pressure. Your growth is always the priority.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 4 — HOW IT WORKS
+         ================================================================== -->
+    <section id="how-it-works" class="how-section section" aria-labelledby="how-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">🚀 Get Started</span>
+          <h2 id="how-heading" class="section-title">How It Works</h2>
+          <p class="section-subtitle">Four simple steps to begin your learning journey.</p>
+        </div>
+
+        <ol class="steps-list" data-animate="fade-up" aria-label="Learning process steps">
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div class="step-content">
+              <h3>Choose a Course</h3>
+              <p>Browse our courses, read the details, and pick the subject that matches your current learning need.</p>
+            </div>
+            <div class="step-icon" aria-hidden="true">📚</div>
+          </li>
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div class="step-content">
+              <h3>Book a Free Demo</h3>
+              <p>Fill in the demo booking form — it takes less than two minutes. No payment required at this stage.</p>
+            </div>
+            <div class="step-icon" aria-hidden="true">📝</div>
+          </li>
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div class="step-content">
+              <h3>Discuss Your Goals</h3>
+              <p>In your free demo session, share your goals and challenges. We will tailor a plan just for you.</p>
+            </div>
+            <div class="step-icon" aria-hidden="true">💬</div>
+          </li>
+          <li class="step-item">
+            <div class="step-number" aria-hidden="true">4</div>
+            <div class="step-content">
+              <h3>Begin Your Journey</h3>
+              <p>Start regular sessions, complete exercises, and track your progress toward your goals.</p>
+            </div>
+            <div class="step-icon" aria-hidden="true">🎯</div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 5 — ABOUT THE TUTOR
+         ================================================================== -->
+    <section id="about" class="about-section section" aria-labelledby="about-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">👨‍🏫 Meet Your Tutor</span>
+          <h2 id="about-heading" class="section-title">About the Tutor</h2>
+        </div>
+
+        <div class="about-grid" data-animate="fade-up">
+
+          <!-- Tutor Photo -->
+          <div class="about-image-col">
+            <div class="tutor-card">
+              <img src="assets/images/tutor-avatar.jpg"
+                   alt="Illustrated portrait of the tutor — fictional demo character"
+                   width="320" height="320"
+                   loading="lazy"
+                   class="tutor-photo" />
+              <div class="tutor-info-badge">
+                <p class="tutor-name">Arjun Sharma</p>
+                <p class="tutor-title">Maths &amp; CS Educator</p>
+                <p class="demo-label">⚠️ Fictional demo profile — replace with real info</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tutor Details -->
+          <div class="about-text-col">
+            <div class="about-meta">
+              <div class="meta-item">
+                <span class="meta-icon" aria-hidden="true">🎓</span>
+                <div>
+                  <strong>Qualifications (Demo)</strong>
+                  <p>B.Tech Computer Science &amp; Engineering (Fictional University, 2022) — <em>replace with real credentials</em></p>
+                </div>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon" aria-hidden="true">📆</span>
+                <div>
+                  <strong>Experience (Demo)</strong>
+                  <p>3+ years tutoring students at school and college level — <em>replace with actual verified figure</em></p>
+                </div>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon" aria-hidden="true">📖</span>
+                <div>
+                  <strong>Subjects Taught</strong>
+                  <p>Mathematics · Physics · Python · Web Development · Data Science · Computer Science</p>
+                </div>
+              </div>
+            </div>
+
+            <blockquote class="teaching-philosophy">
+              <p>"Every student has the potential to excel. My job is to find the right way to explain each concept so it clicks for <em>you</em> — not just for the average learner."</p>
+              <footer>— <cite>Arjun Sharma, Demo Tutor</cite></footer>
+            </blockquote>
+
+            <a href="#contact" class="btn btn-primary">Contact the Tutor</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 6 — TESTIMONIALS
+         ================================================================== -->
+    <section id="testimonials" class="testimonials-section section" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">💬 Student Stories</span>
+          <h2 id="testimonials-heading" class="section-title">What Students Say</h2>
+          <p class="section-subtitle">
+            <strong>Note:</strong> The testimonials below are <em>sample / demo content</em> for illustration purposes only.
+            Real reviews will be added with the explicit permission of actual students.
+          </p>
+        </div>
+
+        <div class="testimonials-grid" data-animate="fade-up" aria-label="Sample testimonials">
+          <!-- Testimonial cards rendered by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 7 — FAQ
+         ================================================================== -->
+    <section id="faq" class="faq-section section" aria-labelledby="faq-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">❓ Common Questions</span>
+          <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list" data-animate="fade-up" role="list" aria-label="FAQ accordion">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1">
+              How do I book a demo class?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <p>Scroll to the Contact &amp; Booking section at the bottom of this page, fill in the quick form with your name, email, and preferred time, and submit. You will receive a confirmation (once a real backend or form service is connected).</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2">
+              Which courses are currently available?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2" hidden>
+              <p>We currently offer tutoring in Mathematics, Physics, Python Programming, Web Development, Data Science Fundamentals, and Computer Science Foundations. More subjects may be added — contact us to discuss your specific requirements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3">
+              Are online classes available?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <p>Yes! All courses are available online via video call (Google Meet / Zoom), as well as in-person (location to be confirmed). You can choose your preferred mode when booking.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4">
+              Can I request a personalised learning plan?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <p>Absolutely. After the free demo session, a personalised learning plan is created for every student based on their current level, target goals, and schedule. It is not a one-size-fits-all approach.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-btn-5">
+              How do I contact the tutor directly?
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5" hidden>
+              <p>Use the contact form on this page, the WhatsApp button (if configured), or the email address listed in the footer. The tutor typically responds within one business day.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6" id="faq-btn-6">
+              What are the session fees? (Demo answer)
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-btn-6" hidden>
+              <p><strong>Demo answer — replace with real pricing before publishing.</strong> Fees vary by subject and session length. Contact the tutor directly for a personalised quote. The initial demo session is free.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SECTION 8 — CONTACT & DEMO BOOKING
+         ================================================================== -->
+    <section id="contact" class="contact-section section" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-badge">📬 Get in Touch</span>
+          <h2 id="contact-heading" class="section-title">Book a Free Demo</h2>
+          <p class="section-subtitle">Fill in the form below and we will get back to you within one working day.</p>
+        </div>
+
+        <!-- IMPORTANT: Static site — form does NOT send real emails.
+             See the demo notice and README for how to connect a real form service. -->
+        <div class="contact-grid" data-animate="fade-up">
+
+          <!-- Contact Info Column -->
+          <div class="contact-info-col">
+            <h3 class="contact-info-title">Contact Details</h3>
+            <p class="contact-info-note demo-label">⚠️ Demo values — replace with real contact info before publishing.</p>
+
+            <ul class="contact-details-list">
+              <li>
+                <span class="contact-icon" aria-hidden="true">📧</span>
+                <a href="mailto:demo@smarttutor.example.com">demo@smarttutor.example.com</a>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">📞</span>
+                <span>+91 00000 00000 (configure in script.js)</span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">🕐</span>
+                <span>Mon – Sat, 9 AM – 8 PM IST</span>
+              </li>
+              <li>
+                <span class="contact-icon" aria-hidden="true">📍</span>
+                <span>Online &amp; In-person (location TBC)</span>
+              </li>
+            </ul>
+
+            <!-- WhatsApp Button — rendered by JS based on config -->
+            <div id="whatsapp-container"></div>
+
+            <!-- Social Links — only shown when real accounts configured -->
+            <div id="social-links-container"></div>
+          </div>
+
+          <!-- Booking Form Column -->
+          <div class="contact-form-col">
+
+            <!-- Demo mode notice -->
+            <div class="form-demo-notice" role="note" aria-label="Demo mode notice">
+              <strong>🛠️ Demo Mode:</strong> This form is in demonstration mode.
+              Submissions are <em>not</em> sent to any email or server.
+              See the <a href="#" id="readme-link">README</a> for how to connect a real form service (Formspree, EmailJS, or Flask backend).
+            </div>
+
+            <form id="booking-form" class="booking-form" novalidate aria-label="Demo booking enquiry form">
+
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="f-name" class="form-label">Full Name <span aria-hidden="true" class="required-star">*</span></label>
+                <input type="text" id="f-name" name="name" class="form-input"
+                       placeholder="e.g. Priya Mehta"
+                       autocomplete="name"
+                       required aria-required="true"
+                       aria-describedby="f-name-error" />
+                <span id="f-name-error" class="field-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="f-email" class="form-label">Email Address <span aria-hidden="true" class="required-star">*</span></label>
+                <input type="email" id="f-email" name="email" class="form-input"
+                       placeholder="you@example.com"
+                       autocomplete="email"
+                       required aria-required="true"
+                       aria-describedby="f-email-error" />
+                <span id="f-email-error" class="field-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Phone (optional) -->
+              <div class="form-group">
+                <label for="f-phone" class="form-label">Phone Number <span class="optional-tag">(optional)</span></label>
+                <input type="tel" id="f-phone" name="phone" class="form-input"
+                       placeholder="+91 98765 43210"
+                       autocomplete="tel"
+                       aria-describedby="f-phone-hint" />
+                <span id="f-phone-hint" class="field-hint">We may use this for WhatsApp follow-up.</span>
+              </div>
+
+              <!-- Course Selection -->
+              <div class="form-group">
+                <label for="f-course" class="form-label">Course of Interest <span aria-hidden="true" class="required-star">*</span></label>
+                <select id="f-course" name="course" class="form-input form-select"
+                        required aria-required="true"
+                        aria-describedby="f-course-error">
+                  <option value="" disabled selected>-- Select a course --</option>
+                  <option value="mathematics">Mathematics</option>
+                  <option value="physics">Physics</option>
+                  <option value="python">Python Programming</option>
+                  <option value="webdev">Web Development</option>
+                  <option value="datascience">Data Science Fundamentals</option>
+                  <option value="cs-foundations">Computer Science Foundations</option>
+                  <option value="other">Other / Not Sure Yet</option>
+                </select>
+                <span id="f-course-error" class="field-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Learning Mode -->
+              <div class="form-group">
+                <fieldset>
+                  <legend class="form-label">Preferred Learning Mode <span aria-hidden="true" class="required-star">*</span></legend>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="mode" value="online" required /> Online (video call)
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="mode" value="in-person" /> In-person
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="mode" value="flexible" /> Flexible (either)
+                    </label>
+                  </div>
+                  <span id="f-mode-error" class="field-error" role="alert" aria-live="polite"></span>
+                </fieldset>
+              </div>
+
+              <!-- Preferred Time -->
+              <div class="form-group">
+                <label for="f-time" class="form-label">Preferred Time Slot</label>
+                <select id="f-time" name="time" class="form-input form-select">
+                  <option value="" disabled selected>-- Select preferred time --</option>
+                  <option value="morning">Morning (9 AM – 12 PM)</option>
+                  <option value="afternoon">Afternoon (12 PM – 4 PM)</option>
+                  <option value="evening">Evening (4 PM – 8 PM)</option>
+                  <option value="weekend">Weekend (any time)</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label for="f-message" class="form-label">Your Message <span aria-hidden="true" class="required-star">*</span></label>
+                <textarea id="f-message" name="message" class="form-input form-textarea"
+                          placeholder="Tell us briefly about your learning goals or any questions you have…"
+                          rows="4"
+                          required aria-required="true"
+                          aria-describedby="f-message-error"
+                          maxlength="1000"></textarea>
+                <span id="f-message-error" class="field-error" role="alert" aria-live="polite"></span>
+                <span class="char-count" id="char-count" aria-live="polite">0 / 1000</span>
+              </div>
+
+              <!-- Privacy Note -->
+              <p class="form-privacy">
+                🔒 Your details are collected only for this demo enquiry and will not be shared with third parties.
+                See the demo privacy notice in the footer.
+              </p>
+
+              <!-- Submit Button -->
+              <button type="submit" id="form-submit-btn" class="btn btn-primary btn-full">
+                <span class="btn-text">Send Enquiry</span>
+                <span class="btn-spinner" aria-hidden="true" hidden></span>
+              </button>
+
+              <!-- Form feedback messages -->
+              <div id="form-success" class="form-message form-success" role="alert" aria-live="polite" hidden>
+                ✅ <strong>Demo submission received!</strong>
+                In a real deployment, your message would be sent to the tutor.
+                Please connect a form service (see README) for live use.
+              </div>
+              <div id="form-error" class="form-message form-error" role="alert" aria-live="polite" hidden>
+                ❌ Something went wrong. Please check your inputs and try again.
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-col footer-brand">
+          <a href="#home" class="nav-logo footer-logo" aria-label="SmartTutor home">
+            <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true">
+              <rect width="64" height="64" rx="12" fill="#2563eb"/>
+              <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="32" font-family="Inter,Arial" font-weight="800" fill="white">ST</text>
+            </svg>
+            <span class="logo-text">Smart<span class="logo-accent">Tutor</span></span>
+          </a>
+          <p class="footer-desc">
+            Personalised tutoring and coaching in STEM and technology subjects.
+            Helping students learn smarter and achieve more.
+          </p>
+          <!-- Social links rendered by JS only when configured -->
+          <div id="footer-social" class="footer-social"></div>
+        </div>
+
+        <!-- Quick Links -->
+        <nav class="footer-col" aria-label="Quick navigation links">
+          <h3 class="footer-col-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Course Links -->
+        <nav class="footer-col" aria-label="Course links">
+          <h3 class="footer-col-title">Courses</h3>
+          <ul class="footer-links">
+            <li><a href="#courses">Mathematics</a></li>
+            <li><a href="#courses">Physics</a></li>
+            <li><a href="#courses">Python Programming</a></li>
+            <li><a href="#courses">Web Development</a></li>
+            <li><a href="#courses">Data Science</a></li>
+            <li><a href="#courses">CS Foundations</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Contact <span class="demo-label-inline">(demo)</span></h3>
+          <ul class="footer-contact-list">
+            <li><span aria-hidden="true">📧</span> <a href="mailto:demo@smarttutor.example.com">demo@smarttutor.example.com</a></li>
+            <li><span aria-hidden="true">📞</span> <span>+91 00000 00000</span></li>
+            <li><span aria-hidden="true">🕐</span> <span>Mon–Sat, 9 AM–8 PM IST</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="footer-year"></span> SmartTutor. All rights reserved.
+          Built as a portfolio demo by a BTech CSE/AI-ML student.
+        </p>
+        <p class="footer-privacy">
+          🔒 <strong>Demo Privacy Notice:</strong> This website does not collect or store real personal data.
+          The contact form is in demo mode — no data is transmitted to any server.
+          Before going live, add a proper privacy policy and connect a real form service.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       FLOATING UI ELEMENTS
+       ===================================================================== -->
+
+  <!-- Back-to-top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top of page" title="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- =====================================================================
+       COURSE DETAIL MODAL
+       ===================================================================== -->
+  <div id="course-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" hidden>
+    <div class="modal-container">
+      <button id="modal-close-btn" class="modal-close" aria-label="Close course details">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div id="modal-body" class="modal-body">
+        <!-- Populated dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
