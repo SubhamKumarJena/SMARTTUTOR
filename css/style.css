@@ -1607,10 +1607,13 @@ input, select, textarea {
   background: rgba(15,31,75,0.7);
   backdrop-filter: blur(4px);
   z-index: 2000;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: var(--space-4);
+}
+.modal-overlay:not([hidden]) {
+  display: flex;
   /* Animation */
   animation: modal-fade-in 0.2s ease;
 }
@@ -1652,7 +1655,7 @@ input, select, textarea {
 }
 .modal-close:hover { background: #fee2e2; color: #dc2626; }
 
-.modal-body { padding: var(--space-8); }
+.modal-body { padding: var(--space-8); color: var(--text-primary); }
 .modal-header {
   display: flex;
   align-items: flex-start;

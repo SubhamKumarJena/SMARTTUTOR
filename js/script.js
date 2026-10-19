@@ -696,6 +696,11 @@ function initModal() {
   const closeBtn = document.getElementById("modal-close-btn");
   if (!overlay) return;
 
+  // Ensure modal starts closed on initial load
+  overlay.setAttribute("hidden", "");
+  overlay.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
   // Close on close button
   closeBtn?.addEventListener("click", closeModal);
 
@@ -744,6 +749,9 @@ function openModal(courseId) {
       }
     });
   }
+
+  // Wire up the in-modal "Close" action button
+  modalBody.querySelector(".modal-close-action")?.addEventListener("click", closeModal);
 
   // Show the modal
   overlay.removeAttribute("hidden");
@@ -837,7 +845,7 @@ function buildModalContent(course) {
 
     <div class="modal-actions">
       <button class="btn btn-primary modal-enquire-btn">Enquire About This Course</button>
-      <button class="btn btn-outline modal-close-action" onclick="closeModal()">Close</button>
+      <button class="btn btn-outline modal-close-action" type="button">Close</button>
     </div>
   `;
 }
